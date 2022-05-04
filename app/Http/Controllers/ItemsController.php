@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Items;
+use App\Http\Requests\ItemsRequest;
 
 class ItemsController extends Controller
 {
@@ -23,9 +24,9 @@ class ItemsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        
     }
 
     /**
@@ -36,7 +37,15 @@ class ItemsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'text' => ['required','max:255'],
+            'body' => ['required'],
+        ]);
+
+        $postData = new Items;
+        $postData->text = $request->text;
+        $postData->body = $request->body;
+        $postData->save();
     }
 
     /**
