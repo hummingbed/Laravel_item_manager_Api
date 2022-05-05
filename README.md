@@ -14,7 +14,7 @@ http://127.0.0.1:8000/api/items
 ```
 ```
 -get request
-http://127.0.0.1:8000/api/items/{}
+http://127.0.0.1:8000/api/items/{id}
 
 ```
 

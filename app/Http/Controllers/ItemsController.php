@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Items;
 use App\Http\Requests\ItemsRequest;
+use App\Http\Resources\ItemsResource;
 
 class ItemsController extends Controller
 {
@@ -15,8 +16,8 @@ class ItemsController extends Controller
      */
     public function index()
     {
-        return Items::all();
-        //return 123;
+        // return Items::all();
+        return ItemsResource::collection(Items::paginate(5)); 
     }
 
     /**
@@ -79,7 +80,15 @@ class ItemsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validatedData = $request->validate([
+            'text' => ['required','max:255'],
+            'body' => ['required'],
+        ]);
+
+        $postData = Items::find($id);
+        $postData->text = $request->text;
+        $postData->body = $request->body;
+        $postData->save();
     }
 
     /**
@@ -90,6 +99,7 @@ class ItemsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $postData = Items::find($id);
+        $postData->delete();
     }
 }
