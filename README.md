@@ -24,3 +24,16 @@ http://127.0.0.1:8000/api/items/{id}
 http://127.0.0.1:8000/api/items
 
 ```
+-DELETE
+-Delete request
+
+http://127.0.0.1:8000/api/items/{id}
+
+```
+
+-UPDATE
+-Post request
+
+http://127.0.0.1:8000/api/items/{id}
+
+```
