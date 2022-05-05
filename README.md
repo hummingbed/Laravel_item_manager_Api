@@ -4,7 +4,7 @@
 
 ## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable 
+Simple laravel api showinging CRUD logic
 
 ## Endpoints
 ```
