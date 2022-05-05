@@ -57,7 +57,7 @@ class ItemsController extends Controller
      */
     public function show($id)
     {
-        return Items::find($id);
+        return new ItemsResource(Items::findOrFail($id));
     }
 
     /**
