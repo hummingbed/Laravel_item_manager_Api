@@ -8,17 +8,20 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 
 ## Endpoints
 ```
+VIEW DATA
 -get request
 http://127.0.0.1:8000/api/items  
 
 ```
 ```
+-VIEW BY ID
 -get request
 http://127.0.0.1:8000/api/items/{id}
 
 ```
 
 ```
+-SAVE
 -Post request
 
 http://127.0.0.1:8000/api/items
